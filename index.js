@@ -93,14 +93,14 @@ module.exports = function (opts = {}) {
 
 		// declare some vars
 		var newImageWidth = 1                           // will become e.g. '1280'
-		var originFilePath = path.join(process.cwd(), options.staticDir + requestUrl) // e.g. '<FILESYSTEMPATH>/<PROJECT>/public/images/subdir/image.jpg'
+		var originFilePath = path.join(options.staticDir, requestUrl) // e.g. '<FILESYSTEMPATH>/<PROJECT>/public/images/subdir/image.jpg'
 		var reqFileName = requestFileName               // e.g. 'image.jpg'
 		var reqFileType = reqFileName.split('.').pop()  // e.g. '.jpg'
 		var newFileType = ''                            // can become e.g. '.webp'
 		var newFilePath = ''  													// will become e.g. '/images-cache/1280/image.jpg'
 		var cacheFilePath = ''                          // will become e.g. '<FILESYSTEMPATH>/<PROJECT>/images-cache/1280/image.jpg'
 		var cacheFileWidth = 0                          // will become e.g. '1280'
-		var cacheDirPath = path.join(process.cwd(), options.staticDir + path.dirname(requestUrl) + options.cacheSuffix) // e.g. '<FILESYSTEMPATH>/<PROJECT>/public/images-cache', will become e.g.: '<FILESYSTEMPATH>/<PROJECT>/public/images-cache/1280'
+		var cacheDirPath = path.join(options.staticDir, path.dirname(requestUrl), options.cacheSuffix) // e.g. '<FILESYSTEMPATH>/<PROJECT>/public/images-cache', will become e.g.: '<FILESYSTEMPATH>/<PROJECT>/public/images-cache/1280'
 		var deviceParameters = []; 											// array: deviceParameters[2] = device-density, deviceParameters[3] = device-width
 
 		// is image corrupted ?
