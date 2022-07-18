@@ -100,7 +100,7 @@ module.exports = function (opts = {}) {
 		var newFilePath = ''  													// will become e.g. '/images-cache/1280/image.jpg'
 		var cacheFilePath = ''                          // will become e.g. '<FILESYSTEMPATH>/<PROJECT>/images-cache/1280/image.jpg'
 		var cacheFileWidth = 0                          // will become e.g. '1280'
-		var cacheDirPath = path.join(options.staticDir, path.dirname(requestUrl), options.cacheSuffix) // e.g. '<FILESYSTEMPATH>/<PROJECT>/public/images-cache', will become e.g.: '<FILESYSTEMPATH>/<PROJECT>/public/images-cache/1280'
+		var cacheDirPath = path.join(options.staticDir, path.dirname(requestUrl) + options.cacheSuffix) // e.g. '<FILESYSTEMPATH>/<PROJECT>/public/images-cache', will become e.g.: '<FILESYSTEMPATH>/<PROJECT>/public/images-cache/1280'
 		var deviceParameters = []; 											// array: deviceParameters[2] = device-density, deviceParameters[3] = device-width
 
 		// is image corrupted ?
